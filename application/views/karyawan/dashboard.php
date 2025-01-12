@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Jabatan - Sun Theme</title>
+    <title>Dashboard Karyawan - Sun Theme</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <style>
         body {
@@ -122,7 +122,7 @@
                     <td><?= $k->kode_karyawan; ?></td>
                     <td><?= $k->nama; ?></td>
                     <td><?= $k->jenis_kelamin; ?></td>
-                    <td><?= $k->jabatan; ?></td>
+                    <td><?= $k->nama_jabatan; ?></td>
                     <td><?= $k->tanggal_lahir; ?></td>
                     <td><?= $k->tanggal_masuk; ?></td>
                     <td>

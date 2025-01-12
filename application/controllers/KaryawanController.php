@@ -4,6 +4,7 @@ class KaryawanController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('KaryawanModel');
+        $this->load->model('JabatanModel');
         $this->load->library('form_validation');
         $this->load->library('session');
     }
@@ -13,7 +14,17 @@ class KaryawanController extends CI_Controller {
             redirect('auth/login');
         }
 
-        $data['karyawan'] = $this->KaryawanModel->get_all_karyawan();
+        $karyawan = $this->KaryawanModel->get_all_karyawan();
+        foreach ($karyawan as $k) {
+            $jabatan = $this->JabatanModel->get_by_id($k->jabatan);
+            if ($jabatan) {
+                $k->nama_jabatan = $jabatan->nama_jabatan;
+            } else {
+                $k->nama_jabatan = 'N/A';
+            }
+        }
+        
+        $data['karyawan'] = $karyawan;
         $this->load->view('karyawan/dashboard', $data);
     }
 
@@ -22,7 +33,7 @@ class KaryawanController extends CI_Controller {
             redirect('auth/login');
         }
 
-        $data['jabatan'] = $this->KaryawanModel->get_all_jabatan();
+        $data['jabatan'] = $this->JabatanModel->get_all();
         $this->load->view('karyawan/create', $data);
     }
 
@@ -60,7 +71,7 @@ class KaryawanController extends CI_Controller {
         }
 
         $data['karyawan'] = $this->KaryawanModel->get_karyawan_by_id($id);
-        $data['jabatan'] = $this->KaryawanModel->get_all_jabatan();
+        $data['jabatan'] = $this->JabatanModel->get_all();
         $this->load->view('karyawan/edit', $data);
     }
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <style>
         body {
-            background: radial-gradient(circle,rgb(179, 180, 184),rgb(152, 153, 156),rgb(145, 147, 150));
+            background: radial-gradient(circle, rgb(179, 180, 184), rgb(152, 153, 156), rgb(145, 147, 150));
             color: white;
             font-family: Arial, sans-serif;
             min-height: 100vh;
@@ -17,7 +17,7 @@
         }
 
         h1 {
-            color:rgb(190, 187, 187);
+            color: rgb(190, 187, 187);
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
 

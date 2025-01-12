@@ -22,7 +22,12 @@ class JabatanController extends CI_Controller {
             redirect('auth/login');
         }
 
-        $data['nama_jabatan_options'] = ['Manager', 'Staff', 'Supervisor', 'Intern'];
+        $data['nama_jabatan_options'] = [
+            'Chief Technology Officer', 'Chief Marketing Officer', 'Chief Operating Officer', 
+            'Chief Executive Officer', 'Chief Financial Officer', 'Chief Human Resources Officer', 
+            'Chief Compliance Officer', 'Chief Data Officer', 'Chief Business Officer',
+            'Manager', 'Staff', 'Supervisor', 'Intern'
+        ];
         $this->load->view('jabatan/create', $data);
     }
 
@@ -52,7 +57,12 @@ class JabatanController extends CI_Controller {
         }
 
         $data['jabatan'] = $this->JabatanModel->get_by_id($id);
-        $data['nama_jabatan_options'] = ['Manager', 'Staff', 'Supervisor', 'Intern'];
+        $data['nama_jabatan_options'] = [
+            'Chief Technology Officer', 'Chief Marketing Officer', 'Chief Operating Officer', 
+            'Chief Executive Officer', 'Chief Financial Officer', 'Chief Human Resources Officer', 
+            'Chief Compliance Officer', 'Chief Data Officer', 'Chief Business Officer',
+            'Manager', 'Staff', 'Supervisor', 'Intern'
+        ];
         $this->load->view('jabatan/edit', $data);
     }
 

@@ -72,7 +72,7 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Daftar Users</h2>
+        <h2>Manajemen Users</h2>
         <table class="table table-striped">
             <thead>
                 <tr>
